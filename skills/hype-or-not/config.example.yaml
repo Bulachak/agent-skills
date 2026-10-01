@@ -1,0 +1,54 @@
+# Hype-or-Not Triage Policy Configuration
+# Copy this file to config.yaml and customize for your project or team.
+
+project:
+  name: "My Project / Team"
+  evaluator: "AI Assistant"
+
+# Storage & Output Adapter
+storage:
+  # Primary backend options: 'csv', 'markdown', 'jsonl', 'gsheet'
+  primary_backend: "csv"
+  
+  # File paths for local backends
+  csv_path: "./triage_log.csv"
+  markdown_path: "./triage_log.md"
+  jsonl_path: "./triage_log.jsonl"
+  
+  # Google Sheets configuration (optional)
+  gsheet:
+    enabled: false
+    spreadsheet_id: ""  # Paste your Google Sheet ID here
+    tab_name: "Hype or Not Note Triage"
+    # CLI tool to use: 'gws' (Google Workspace CLI) or 'auto'
+    cli_tool: "gws"
+
+# Phase 2 Policy Gates (Customize to match your architecture & constraints)
+policy_gates:
+  # Cost & SaaS Gate
+  cost:
+    allow_paid_saas: false            # Reject tools requiring recurring paid SaaS subscriptions
+    max_monthly_cost_usd: 0           # Set to >0 if monthly tooling budgets exist
+
+  # Token Economy & Execution Safety Gate
+  token_economy:
+    allow_unbounded_loops: false      # Reject runaway autonomous loops that burn tokens indefinitely
+    require_bounded_steps: true       # Require short-chain execution with explicit checkpoints
+
+  # Architecture & Control Gate
+  architecture:
+    require_human_in_the_loop: true   # Reject tools that enforce unsupervised machine lockout
+    prefer_local_first: true          # Favor local CLI tools, scripts, and open data formats
+    require_open_formats: true        # Favor plain text (Markdown, JSON, SQLite) over opaque binaries
+
+  # Compliance & License Gate
+  compliance:
+    require_tos_compliance: true      # Reject tools requiring ToS-violating scraping or credential harvesting
+    allowed_licenses:                 # Permitted open-source licenses for code adoption
+      - "MIT"
+      - "Apache-2.0"
+      - "BSD-2-Clause"
+      - "BSD-3-Clause"
+      - "ISC"
+      - "MPL-2.0"
+      - "Unlicense"
