@@ -1,6 +1,7 @@
 ---
 name: hype-or-not
-description: Upstream triage shield and reality-check engine for AI workflows. Critically evaluates incoming links, articles, YouTube videos, GitHub repos, newsletters, and social media drop-offs for technical substance vs. empty hype, AI slop density, and system alignment before entering testing queues or internal workflows. Automatically logs triage assessments to local CSV/Markdown or Google Sheets. Triggers on: 'hype or not', 'reality check', 'triage link', 'slop audit', 'audit newsletter', 'triage drop-off', 'is this hype', 'evaluate tool', 'hype check', 'triage incoming'.
+description: >-
+  Upstream triage shield and reality-check engine for AI workflows. Critically evaluates incoming links, articles, YouTube videos, GitHub repos, newsletters, and social media drop-offs for technical substance vs. empty hype, AI slop density, and system alignment before entering testing queues or internal workflows. Automatically logs triage assessments to local CSV/Markdown or Google Sheets. Triggers on: 'hype or not', 'reality check', 'triage link', 'slop audit', 'audit newsletter', 'triage drop-off', 'is this hype', 'evaluate tool', 'hype check', 'triage incoming'.
 license: MIT
 version: 1.0.0
 ---
