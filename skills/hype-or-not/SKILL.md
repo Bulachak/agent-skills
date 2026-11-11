@@ -128,7 +128,7 @@ If (and ONLY if) Phase 1 demonstrates genuine substance, evaluate the candidate 
 
 ## Logging Results
 
-Log every evaluated candidate using the universal storage adapter [append_triage.py](./scripts/append_triage.py):
+Log every evaluated candidate using the universal storage adapter [append_triage.py](./scripts/append_triage.py) (which automatically strips newsletter tracking parameters, referral codes, and subscriber JWT query tokens from `--url` before writing; run `python ./scripts/append_triage.py --self-test` to verify):
 
 ### Default: Local CSV (Zero-Setup)
 ```bash
